@@ -50,7 +50,7 @@ function generateResume(event) {
         var resumeHTML = "\n        <div class=\"resume-container\" id=\"resum\">\n            <div class=\"sidebar\">\n                <h2>Name</h2>\n                <p class=\"subtitle\" contenteditable=\"true\">".concat(fullName, "</p>\n                <div class=\"contact-section\">\n                    <h3>Contact</h3>\n                    <p contenteditable=\"true\">").concat(email, "</p>\n                    <p contenteditable=\"true\">").concat(phone, "</p>\n                </div>\n                <div class=\"skills-section\">\n                    <h3>Skills</h3>\n                    <p contenteditable=\"true\">").concat(skills.join(", "), "</p>\n                </div>\n            </div>    \n            \n            <div class=\"main-content\">\n                <div class=\"work-experience-section\">\n                    <h3>Work Experience</h3>\n                    <div id=\"work-content\">\n                        <div class=\"job\">\n                            <h6 contenteditable=\"true\">").concat(workExperience, "</h6>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"education-section\">\n                    <h3>Education</h3>\n                    <div id=\"education-content\">\n                        <div class=\"degree\">\n                            <h6 contenteditable=\"true\">").concat(education, "</h6>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        ");
         resumeContainer.innerHTML = resumeHTML;
         var buttonContainer = document.createElement('div');
-        buttonContainer.style.textAlign = 'center';
+        buttonContainer.classList.add('button-container'); // Added a class for easier styling
         var downloadLink = document.createElement('button');
         downloadLink.textContent = "Download PDF With Unique Url";
         downloadLink.classList.add('btn1');
@@ -96,7 +96,7 @@ function generateResume(event) {
         }); });
         buttonContainer.appendChild(downloadLink);
         buttonContainer.appendChild(shareButton);
-        resumeContainer.appendChild(buttonContainer);
+        document.body.appendChild(buttonContainer); // Append outside the resume-container
     }
     addEditListeners();
 }

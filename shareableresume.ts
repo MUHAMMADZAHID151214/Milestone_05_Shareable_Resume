@@ -54,16 +54,15 @@ function generateResume(event: Event): void {
             </div>
         </div>
         `;
-
         resumeContainer.innerHTML = resumeHTML;
 
         const buttonContainer = document.createElement('div');
-        buttonContainer.style.textAlign = 'center';
-
+        buttonContainer.classList.add('button-container'); // Added a class for easier styling
+        
         const downloadLink = document.createElement('button');
         downloadLink.textContent = "Download PDF With Unique Url";
         downloadLink.classList.add('btn1');
-
+        
         downloadLink.addEventListener("click", () => {
             const elementToConvert = document.getElementById("resum");
             if (elementToConvert) {
@@ -78,29 +77,29 @@ function generateResume(event: Event): void {
                     .save();
             }
         });
-
+        
         const shareButton = document.createElement('button');
         shareButton.textContent = "Copy ShareLink";
         shareButton.classList.add('btn2');
         shareButton.addEventListener("click", async () => {
             try {
                 const baseUrl = 'https://milestone-05-shareable-resume.vercel.app/'; 
-            const fileName = `index.html`;
-            const shareableLink = `${baseUrl}${fileName}`;
-            
+                const fileName = `index.html`;
+                const shareableLink = `${baseUrl}${fileName}`;
+                
                 await navigator.clipboard.writeText(shareableLink);
                 alert("Link Copied!!");
             } catch (err) {
                 console.error("Failed to copy link: ", err);
                 alert("Failed to copy link. Try again!"); 
             }
-            
         });
-
+        
         buttonContainer.appendChild(downloadLink);
         buttonContainer.appendChild(shareButton);
-
-        resumeContainer.appendChild(buttonContainer);
+        
+        document.body.appendChild(buttonContainer); // Append outside the resume-container
+        
     }
 
     addEditListeners();
