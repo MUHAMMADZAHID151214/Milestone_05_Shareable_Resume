@@ -56,10 +56,10 @@ button:hover {
     border-color: #f39c12;
     border-radius: 10%;
     padding: 10px;
-    height: 80px;
-    margin: 40px;
-    margin-right: 72px;
+    height: 40px;
     width: fit-content;
+    margin-top: 450px;
+    
 
 }
 .btn1:hover {
@@ -71,10 +71,7 @@ button:hover {
     border-color: #f39c12;
     border-radius: 10%;
     padding: 10px;
-    height: 80px;
-    margin: 40px;
-    margin-right: 72px;
-}
+    height: 40px;}
 .btn2:hover {
 background-color: #f39c12;
 }
