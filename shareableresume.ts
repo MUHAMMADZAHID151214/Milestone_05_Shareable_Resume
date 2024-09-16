@@ -84,7 +84,7 @@ function generateResume(event: Event): void {
         shareButton.classList.add('btn2');
         shareButton.addEventListener("click", async () => {
             try {
-                const baseUrl = 'http://localhost:8000/'; // Local server URL
+                const baseUrl = 'https://milestone-05-shareable-resume.vercel.app/'; 
             const fileName = `index.html`;
             const shareableLink = `${baseUrl}${fileName}`;
             

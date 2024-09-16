@@ -77,7 +77,7 @@ function generateResume(event) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        baseUrl = 'http://localhost:8000/';
+                        baseUrl = 'https://milestone-05-shareable-resume.vercel.app/';
                         fileName = "index.html";
                         shareableLink = "".concat(baseUrl).concat(fileName);
                         return [4 /*yield*/, navigator.clipboard.writeText(shareableLink)];
